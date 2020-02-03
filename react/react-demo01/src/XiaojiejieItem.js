@@ -1,19 +1,31 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 class XiaojiejieItem extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.handleClick = this.handleClick.bind(this)
     }
-    state = {  }
+    state = {}
     render() {
         return (
-            <li onClick={this.handleClick}>{this.props.content}</li>
+            <li onClick={this.handleClick}>{this.props.avname}-{this.props.content}</li>
         );
     }
-    handleClick(){
+    handleClick() {
         console.log(this.props.index)
         this.props.deleteItem(this.props.index)
     }
 }
- 
+
+
+XiaojiejieItem.propTypes = {
+    content: PropTypes.string,
+    index: PropTypes.number,
+    deleteItem: PropTypes.func
+}
+
+XiaojiejieItem.defaultProps = {
+    avname:'xxx'
+}
+
 export default XiaojiejieItem;
