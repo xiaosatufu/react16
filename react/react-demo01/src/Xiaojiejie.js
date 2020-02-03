@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import XiaojiejieItem from './XiaojiejieItem'
 
 class Xiaojiejie extends Component {
 
@@ -17,7 +18,12 @@ class Xiaojiejie extends Component {
                 <ul>
                     {
                         this.state.list.map((item, index) => {
-                            return <li key={index} onClick={this.deleteItem.bind(this, index)}>{item}</li>
+                            return (
+                                <Fragment>
+                                    <XiaojiejieItem key={index}></XiaojiejieItem>
+                                </Fragment>
+                            )
+                            // <li key={index} onClick={this.deleteItem.bind(this, index)}>{item}</li>
                         })
                     }
                 </ul>
