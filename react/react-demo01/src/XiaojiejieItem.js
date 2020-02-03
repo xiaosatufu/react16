@@ -1,10 +1,18 @@
 import React, { Component, Fragment } from 'react';
 class XiaojiejieItem extends Component {
+    constructor(props){
+        super(props)
+        this.handleClick = this.handleClick.bind(this)
+    }
     state = {  }
-    render() { 
+    render() {
         return (
-            <li>小姐姐</li>
+            <li onClick={this.handleClick}>{this.props.content}</li>
         );
+    }
+    handleClick(){
+        console.log(this.props.index)
+        this.props.deleteItem(this.props.index)
     }
 }
  
